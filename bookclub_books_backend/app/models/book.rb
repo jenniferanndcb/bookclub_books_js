@@ -1,3 +1,3 @@
 class Book < ApplicationRecord
-  belongs_to :bookclubs
+  belongs_to :bookclub
 end
