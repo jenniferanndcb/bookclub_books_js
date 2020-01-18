@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function fetchBookClubs() {
   fetch("http://localhost:3000/bookclubs").then(function(res) {
-    return console.log(res);
+    return res.json();
+  })
+  .then(function(data) {
+    return data.map(function(bookclub){
+      return renderBookClub(bookclub);
+    });
   });
 }
+
+
