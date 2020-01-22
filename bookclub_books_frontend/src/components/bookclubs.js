@@ -6,8 +6,18 @@ class BookClubs {
   }
 
   fetchAndLoadBookClubs() {
-    this.adapter.getBookClub().then(bookclubs => {
-      console.log(bookclubs);
-    });
+    this.adapter
+      .getBookClub()
+      .then(bookclubs => {
+        return console.log(bookclubs);
+      })
+      .then(() => {
+        this.renderBookClubs();
+      });
+  }
+
+  renderBookClubs() {
+    const bookClubsList = document.getElementById("bookclubs-list");
+    bookClubsList.innerHTML = "bookclub here";
   }
 }
