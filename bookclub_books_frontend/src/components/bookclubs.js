@@ -9,7 +9,7 @@ class BookClubs {
     this.adapter
       .getBookClub()
       .then(bookclubs => {
-        return console.log(bookclubs);
+        bookclubs.forEach(bookclub => this.bookclubs.push(bookclub));
       })
       .then(() => {
         this.renderBookClubs();
@@ -19,5 +19,6 @@ class BookClubs {
   renderBookClubs() {
     const bookClubsList = document.getElementById("bookclubs-list");
     bookClubsList.innerHTML = "bookclub here";
+    console.log("bookclubs around:", this.bookclubs);
   }
 }
