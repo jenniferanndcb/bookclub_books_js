@@ -20,11 +20,8 @@ class BookClubs {
 
   renderBookClubs() {
     const bookClubsList = document.getElementById("bookclubs-list");
-    bookClubsList.innerHTML = this.bookclubs.map(
-      bookclub =>
-        `<div class="card">
-        <h1>${bookclub.name}</h1>
-      </div>`
+    bookClubsList.innerHTML = this.bookclubs.map(bookclub =>
+      bookclub.renderCardAndName()
     );
   }
 }
