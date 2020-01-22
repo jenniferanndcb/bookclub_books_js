@@ -12,3 +12,7 @@ body {
   margin: 1rem 2rem;
   box-shadow: 3px 4px #4b4748;
 }
+
+.bookdetails {
+  padding: 50px 30px 10px 30px;
+}
