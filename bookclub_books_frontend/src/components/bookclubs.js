@@ -9,7 +9,9 @@ class BookClubs {
     this.adapter
       .getBookClub()
       .then(bookclubs => {
-        bookclubs.forEach(bookclub => this.bookclubs.push(bookclub));
+        bookclubs.forEach(bookclub =>
+          this.bookclubs.push(new BookClub(bookclub))
+        );
       })
       .then(() => {
         this.renderBookClubs();
@@ -18,7 +20,10 @@ class BookClubs {
 
   renderBookClubs() {
     const bookClubsList = document.getElementById("bookclubs-list");
-    bookClubsList.innerHTML = "bookclub here";
-    console.log("bookclubs around:", this.bookclubs);
+    bookClubsList.innerHTML = `${this.bookclubs.map(bookclub => (
+      <div class="card">
+        <h1>${bookclub.name}</h1>
+      </div>
+    ))}`;
   }
 }
