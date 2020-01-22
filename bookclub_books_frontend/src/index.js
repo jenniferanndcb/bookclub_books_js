@@ -1,43 +1,45 @@
-document.addEventListener("DOMContentLoaded", function() {
-  fetchBookClubs();
-});
+const app = new App();
 
-function fetchBookClubs() {
-  fetch("http://localhost:3000/bookclubs")
-    .then(function(res) {
-      return res.json();
-    })
-    .then(function(data) {
-      return data.map(function(bookclub) {
-        return renderBookClub(bookclub);
-      });
-    });
-}
+// document.addEventListener("DOMContentLoaded", function() {
+//   fetchBookClubs();
+// });
 
-function renderBookClub(bookclub) {
-  const bookclubList = document.getElementById("bookclubs-list");
-  const card = document.createElement("div");
-  card.className = "card";
+// function fetchBookClubs() {
+//   fetch("http://localhost:3000/bookclubs")
+//     .then(function(res) {
+//       return res.json();
+//     })
+//     .then(function(data) {
+//       return data.map(function(bookclub) {
+//         return renderBookClub(bookclub);
+//       });
+//     });
+// }
 
-  bookclubList.append(card);
+// function renderBookClub(bookclub) {
+//   const bookclubList = document.getElementById("bookclubs-list");
+//   const card = document.createElement("div");
+//   card.className = "card";
 
-  const h2 = document.createElement("h2");
-  h2.innerText = bookclub.name;
+//   bookclubList.append(card);
 
-  const h3 = document.createElement("h3");
-  h3.innerText = "Currently Reading:";
+//   const h2 = document.createElement("h2");
+//   h2.innerText = bookclub.name;
 
-  const bookTitle = document.createElement("h3");
-  let cr = bookclub.books.find(book => book.currently_reading === true);
-  console.log(cr.title);
+//   const h3 = document.createElement("h3");
+//   h3.innerText = "Currently Reading:";
 
-  //book details (book.title/book.author/book.image) where currently_reading is true where bookclub_id is == this.bookclub_id
-  //link for previous reads
-  //button to join a bookclub
-  //button to suggest a book once joined
+//   const bookTitle = document.createElement("h3");
+//   let cr = bookclub.books.find(book => book.currently_reading === true);
+//   console.log(cr.title);
 
-  card.append(h2, h3);
-}
+//   //book details (book.title/book.author/book.image) where currently_reading is true where bookclub_id is == this.bookclub_id
+//   //link for previous reads
+//   //button to join a bookclub
+//   //button to suggest a book once joined
+
+//   card.append(h2, h3);
+// }
 
 //renderBook as separate function
 //app.js --> class App {
