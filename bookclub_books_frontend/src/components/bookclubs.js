@@ -3,6 +3,12 @@ class BookClubs {
     this.bookclubs = [];
     this.adapter = new BookClubsAdapter();
     this.fetchAndLoadBookClubs();
+    this.eventListeners();
+  }
+
+  eventListeners() {
+    this.joinButton = document.getElementsByClassName("joinButton");
+    this.joinButton.addEventListerner("click", this.renderBookClub());
   }
 
   fetchAndLoadBookClubs() {
@@ -21,7 +27,11 @@ class BookClubs {
   renderBookClubs() {
     const bookClubsList = document.getElementById("bookclubs-list");
     bookClubsList.innerHTML = this.bookclubs.map(bookclub =>
-      bookclub.renderCardAndName()
+      bookclub.renderBookClubCard()
     );
+  }
+
+  renderBookClub() {
+    alert("clicked");
   }
 }
