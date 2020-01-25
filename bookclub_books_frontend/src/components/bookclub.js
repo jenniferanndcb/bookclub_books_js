@@ -5,12 +5,11 @@ class BookClub {
     this.books = bookClubJSON.books;
   }
 
-
   renderBookClubCard() {
     return `<div class ="card">
     <h2>${this.name}</h2>
     <h3>${this.findCurrentlyReading() || "We are on a break."}</h3>
-    <button class="joinButton">Join Club</button>
+    <button class="join-button">Join Club</button>
     </div>`;
   }
 
@@ -21,12 +20,9 @@ class BookClub {
 
   renderBook(book) {
     return `<div class="bookdetails">
+    <img src= ${book.image}/>
     <h3>${book.title}</h3>
     <h4>by ${book.author}</h4>
     </div>`;
   }
-
-  // <img src= ${book.image}/>
-
-  
 }

@@ -7,8 +7,16 @@ class BookClubs {
   }
 
   eventListeners() {
-    this.joinButton = document.getElementsByClassName("joinButton");
-    this.joinButton.addEventListerner("click", this.renderBookClub());
+    this.bookClubsList = document.getElementById("bookclubs-list");
+    this.bookClubsList.addEventListener("click", () => {
+      if ((event.target.className = "join-button")) {
+        this.renderBookClub();
+      }
+    });
+  }
+
+  renderBookClub(bookclub) {
+    console.log("clicked");
   }
 
   fetchAndLoadBookClubs() {
@@ -29,9 +37,5 @@ class BookClubs {
     bookClubsList.innerHTML = this.bookclubs.map(bookclub =>
       bookclub.renderBookClubCard()
     );
-  }
-
-  renderBookClub() {
-    alert("clicked");
   }
 }
