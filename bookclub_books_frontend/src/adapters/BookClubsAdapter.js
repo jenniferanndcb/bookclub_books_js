@@ -23,8 +23,6 @@ class BookClubsAdapter {
       body: JSON.stringify(bookclub)
     };
 
-    return fetch(this.baseUrl, configObj)
-      .then(res => res.json)
-      .then(record => console.log(record));
+    return fetch(this.baseUrl, configObj).then(res => res.json());
   }
 }

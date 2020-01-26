@@ -6,9 +6,10 @@ class BookclubsController < ApplicationController
   end 
 
   def create
-    binding.pry
-
     @bookclub = Bookclub.create(bookclub_params)
+    @bookclub.books << Book.create(title: params[:book][:title], author: params[:book][:author], currently_reading: true)
+    
+    # @book = @bookclub.books.build(book_params)
 
     render json: @bookclub, status: 200
     
@@ -34,4 +35,5 @@ class BookclubsController < ApplicationController
   def bookclub_params 
     params.require(:bookclub).permit(:name)
   end 
+  
 end
