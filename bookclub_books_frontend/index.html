@@ -15,20 +15,29 @@
 
   <div id="new-bookclub-container">
     <h3>Start a bookclub</h3>
-    <form id="new-bookclub-form">
-      <p>
+    <form
+      id="new-bookclub-form"
+      action="http://localhost:3000.com/bookclubs"
+      method="POST"
+    >
+      <label>
         Bookclub Name:
         <input type="text" name="bookclub-name" id="new-bookclub-name" />
-      </p>
-
-      <p>
+      </label>
+      <br />
+      <label>
         Currently Reading:
         <input
           type="text"
           name="book_currently_reading"
           id="book_currently_reading"
         />
-      </p>
+        <br />
+        <label
+          >by: <br />
+          <input type="text" name="cr_author" id="cr_author"
+        /></label>
+      </label>
       <br />
       <input type="submit" value="Create Bookclub" />
     </form>

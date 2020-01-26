@@ -9,16 +9,16 @@ class BookClub {
     return `<div class ="card">
     <h2>${this.name}</h2>
     <h3>${this.findCurrentlyReading() || "We are on a break."}</h3>
-    <button class="join-button">Join Club</button>
+    <button class="bc-button">See Details</button>
     </div>`;
   }
 
   findCurrentlyReading() {
     let book = this.books.find(book => book.currently_reading);
-    return book ? this.renderBook(book) : false;
+    return book ? this.renderCRBook(book) : false;
   }
 
-  renderBook(book) {
+  renderCRBook(book) {
     return `<div class="bookdetails">
     <img src= ${book.image}/>
     <h3>${book.title}</h3>
