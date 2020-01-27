@@ -9,10 +9,14 @@ class BookclubsController < ApplicationController
     @bookclub = Bookclub.create(bookclub_params)
     @bookclub.books << Book.create(title: params[:book][:title], author: params[:book][:author], currently_reading: true)
     
-    # @book = @bookclub.books.build(book_params)
+    # @book = @bookclub.books.build(book_params) doesn't work!
 
-    render json: @bookclub, status: 200
+    render json: @bookclub, include: [:books]
     
+  end 
+
+  def show 
+    @bookclub = Bookclub.find(params[:id]) 
   end 
 
   def update

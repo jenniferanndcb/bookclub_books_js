@@ -33,9 +33,14 @@ class BookClubs {
       author: this.bookAuthor.value
     };
 
-    this.adapter.createBookClub(value, bookDetails).then(bookclub => {
-      this.bookclubs.push(new Bookclub(bookclub));
-    });
+    this.adapter
+      .createBookClub(value, bookDetails)
+      .then(bookclub => {
+        this.bookclubs.push(new BookClub(bookclub));
+      })
+      .then(() => this.renderBookClubs());
+
+    this.newBookClub.reset();
   }
 
   fetchAndLoadBookClubs() {
