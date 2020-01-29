@@ -17,6 +17,8 @@ class BookclubsController < ApplicationController
 
   def show 
     @bookclub = Bookclub.find(params[:id]) 
+
+    render json: @bookclub, include: [:books] 
   end 
 
   def update

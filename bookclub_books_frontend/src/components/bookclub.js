@@ -3,13 +3,14 @@ class BookClub {
     this.id = bookClubJSON.id;
     this.name = bookClubJSON.name;
     this.books = bookClubJSON.books;
+    this.adapter = new BookClubsAdapter();
   }
 
   renderBookClubCard() {
     return `<div class ="card">
     <h2>${this.name}</h2>
     <h3>${this.findCurrentlyReading() || "We are on a break."}</h3>
-    <button class="bc-button">See Details</button>
+    <button class="bc-button" id="${this.id}">See Details</button>
     </div>`;
   }
 
@@ -24,5 +25,10 @@ class BookClub {
     <h3>${book.title}</h3>
     <h4>by ${book.author}</h4>
     </div>`;
+  }
+
+  renderBookClubDeets() {
+    return `<h2>${this.name}</h2>
+    Currently Reading: `;
   }
 }
