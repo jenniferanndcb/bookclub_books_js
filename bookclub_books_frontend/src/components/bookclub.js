@@ -3,7 +3,6 @@ class BookClub {
     this.id = bookClubJSON.id;
     this.name = bookClubJSON.name;
     this.books = bookClubJSON.books;
-    this.adapter = new BookClubsAdapter();
   }
 
   renderBookClubCard() {
@@ -30,5 +29,10 @@ class BookClub {
   renderBookClubDeets() {
     return `<h2>${this.name}</h2>
     Currently Reading: `;
+  }
+
+  pageTitle(){
+    document.title = `${this.name}`
+    console.log(document.title)
   }
 }

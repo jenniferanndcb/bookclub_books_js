@@ -10,7 +10,7 @@ class BookClubs {
     this.bookClubsList = document.getElementById("bookclubs-list");
     this.bookClubsList.addEventListener("click", () => {
       if (event.target.className === "bc-button") {
-        this.renderBookClub(event.target.id);
+        this.fetchBookClub(event.target.id);
       }
     });
     this.newBookClubName = document.getElementById("new-bookclub-name");
@@ -20,10 +20,12 @@ class BookClubs {
     this.newBookClub.addEventListener("submit", this.createBookClub.bind(this));
   }
 
-  renderBookClub(id) {
-    console.log(this.adapter.baseUrl / id);
-
-    //render bookclub - get id?
+  fetchBookClub(id) {
+    fetch(this.adapter.baseUrl + "/" + `${id}`)
+      .then(res => res.json())
+      .then(bookclub => {
+        console.log(bookclub);
+      });
   }
 
   createBookClub(e) {
