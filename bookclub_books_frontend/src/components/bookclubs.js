@@ -21,11 +21,13 @@ class BookClubs {
   }
 
   fetchBookClub(id) {
-    fetch(this.adapter.baseUrl + "/" + `${id}`)
+    return fetch(this.adapter.baseUrl + `/${id}`)
       .then(res => res.json())
-      .then(bookclub => {
-        console.log(bookclub);
-      });
+      .then(bookclub => bookclub.renderBookClub());
+  }
+
+  renderBookClub() {
+    console.log(bookclub);
   }
 
   createBookClub(e) {

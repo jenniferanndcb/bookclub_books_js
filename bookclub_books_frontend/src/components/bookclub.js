@@ -26,13 +26,9 @@ class BookClub {
     </div>`;
   }
 
-  renderBookClubDeets() {
-    return `<h2>${this.name}</h2>
-    Currently Reading: `;
-  }
-
-  pageTitle(){
-    document.title = `${this.name}`
-    console.log(document.title)
+  renderBookClub() {
+    console.log(bookclub);
+    // return `<h2>${this.name}</h2>
+    // Currently Reading: `;
   }
 }

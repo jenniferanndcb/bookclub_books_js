@@ -5,6 +5,10 @@
   <title>Bookclub Books</title>
 
   <link rel="stylesheet" href="index.css" />
+  <script
+    src="https://kit.fontawesome.com/c6a549fbbd.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 
 <body>
@@ -21,30 +25,50 @@
       method="POST"
     >
       <label>
-        Bookclub Name:
-        <input type="text" name="bookclub-name" id="new-bookclub-name" />
-      </label>
-      <br />
-      <br />
-      <label>
-        Currently Reading:
         <input
           type="text"
+          placeholder="Bookclub Name"
+          name="bookclub-name"
+          id="new-bookclub-name"
+        />
+      </label>
+      <label>
+        <input
+          type="text"
+          placeholder="Currently Reading"
           name="book_currently_reading"
           id="book_currently_reading"
         />
-        <br />
-        <label
-          >by: <br />
-          <input type="text" name="cr_author" id="cr_author"
+        <label>
+          <input
+            type="text"
+            placeholder="Author"
+            name="cr_author"
+            id="cr_author"
         /></label>
       </label>
-      <br />
-      <br />
+
       <input type="submit" value="Create Bookclub" />
     </form>
   </div>
-  
+
+  <div class="bookclub-modal">
+    <div class="bookclub-modal-container">
+      <i class="far fa-window-close"></i>
+      <div class="bookclub-modal-info">
+        <h1>Bookclub Name</h1>
+        <h3>Currently Reading</h3>
+
+        <div class="book-modal-image">
+          <img src="" />
+          <p class="book-modal-title">Title</p>
+
+          <p class="book-modal-label-author">Author</p>
+          <p class="book-modal-label-description">Description</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript" src="src/components/bookclub.js"></script>
   <script type="text/javascript" src="src/components/bookclubs.js"></script>
