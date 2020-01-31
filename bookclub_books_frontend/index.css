@@ -93,23 +93,6 @@ input {
   padding: 5% 5% 10%;
 }
 
-.edit-button {
-  box-shadow: 0px 10px 14px -7px #276873;
-  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-  background-color: #599bb3;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  position: absolute;
-  padding: 10px 30px;
-  text-shadow: 0px 1px 0px #3d768a;
-  display: inline-block;
-  bottom: 15px;
-  left: 30%;
-  width: 110px;
-}
-
 .del-button {
   box-shadow: 0px 10px 14px -7px #276873;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -124,6 +107,6 @@ input {
   display: inline-block;
   cursor: pointer;
   bottom: 15px;
-  right: 30%;
+  right: 50%;
   width: 110px;
 }

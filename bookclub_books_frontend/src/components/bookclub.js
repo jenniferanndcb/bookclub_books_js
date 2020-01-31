@@ -3,6 +3,12 @@ class BookClub {
     this.id = bookClubJSON.id;
     this.name = bookClubJSON.name;
     this.books = bookClubJSON.books;
+    this.bceventListeners();
+  }
+
+  bceventListeners() {
+    this.delete = document.getElementById(`button-${this.id}`);
+    this.delete.addEventListener("click", console.log("clicked"));
   }
 
   renderBookClubCard() {
@@ -51,11 +57,9 @@ class BookClub {
   }
 
   renderBookClubButtons() {
-    return `<div class="edit">
-    <button class="edit-button" id="${this.id}">Edit</button>
-    </div>
-    <div class="delete">
-    <button class="del-button" id="${this.id}">Delete</button>
+    return `
+    <div id="delete">
+    <button class="del-button" id="button-${this.id}">Delete</button>
     </div>
     `;
   }
