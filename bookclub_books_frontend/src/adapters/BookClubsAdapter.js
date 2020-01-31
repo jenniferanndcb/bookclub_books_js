@@ -3,7 +3,7 @@ class BookClubsAdapter {
     this.baseUrl = "http://localhost:3000/bookclubs";
   }
 
-  getBookClub() {
+  getBookClubs() {
     return fetch(this.baseUrl).then(res => res.json());
   }
 
@@ -24,5 +24,9 @@ class BookClubsAdapter {
     };
 
     return fetch(this.baseUrl, configObj).then(res => res.json());
+  }
+
+  getBookClub(id) {
+    return fetch(`${this.baseUrl}/${id}`).then(res => res.json());
   }
 }

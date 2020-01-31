@@ -21,13 +21,10 @@ class BookClubs {
   }
 
   fetchBookClub(id) {
-    return fetch(this.adapter.baseUrl + `/${id}`)
-      .then(res => res.json())
-      .then(bookclub => bookclub.renderBookClub());
-  }
-
-  renderBookClub() {
-    console.log(bookclub);
+    this.adapter.getBookClub(id).then(bookclub => {
+      this.currentSelection = new BookClub(bookclub);
+      this.renderCurrentSelection();
+    });
   }
 
   createBookClub(e) {
@@ -50,7 +47,7 @@ class BookClubs {
 
   fetchAndLoadBookClubs() {
     this.adapter
-      .getBookClub()
+      .getBookClubs()
       .then(bookclubs => {
         bookclubs.forEach(bookclub =>
           this.bookclubs.push(new BookClub(bookclub))
@@ -62,8 +59,12 @@ class BookClubs {
   }
 
   renderBookClubs() {
-    this.bookClubsList.innerHTML = this.bookclubs.map(bookclub =>
-      bookclub.renderBookClubCard()
-    );
+    this.bookClubsList.innerHTML = this.bookclubs
+      .map(bookclub => bookclub.renderBookClubCard())
+      .join("");
+  }
+
+  renderCurrentSelection() {
+    this.bookClubsList.innerHTML = this.currentSelection.renderBookClubDeets();
   }
 }

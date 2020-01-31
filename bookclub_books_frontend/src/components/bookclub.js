@@ -26,9 +26,21 @@ class BookClub {
     </div>`;
   }
 
-  renderBookClub() {
-    console.log(bookclub);
-    // return `<h2>${this.name}</h2>
-    // Currently Reading: `;
+
+  renderBookClubDeets() {
+    return `<div class="page_title">
+    <h2>${this.name}</h2>
+    </div>
+    <div class="cr_reading">
+    <h3>Currently Reading: </h3>
+    ${this.findCurrentlyReading()}
+    </div>
+    <div class="finished_reading">
+    <h3>Bookshelf</h3>
+    <ul>
+    ${this.books.map(book => `<li>${book.title}</li>`).join("")}
+    </ul>
+    </div>
+    `;
   }
 }
