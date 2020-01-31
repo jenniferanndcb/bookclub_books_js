@@ -20,26 +20,42 @@ class BookClub {
 
   renderCRBook(book) {
     return `<div class="bookdetails">
-    <img src= ${book.image}/>
+    <div class="book_img">
+    <img src= ${book.image}>
+    </div>
     <h3>${book.title}</h3>
     <h4>by ${book.author}</h4>
     </div>`;
   }
 
-
   renderBookClubDeets() {
-    return `<div class="page_title">
+    return `<div class="bcdeets_container">
+    <div class="page_title">
     <h2>${this.name}</h2>
     </div>
     <div class="cr_reading">
     <h3>Currently Reading: </h3>
     ${this.findCurrentlyReading()}
     </div>
-    <div class="finished_reading">
+    <div class="bookshelf">
     <h3>Bookshelf</h3>
     <ul>
-    ${this.books.map(book => `<li>${book.title}</li>`).join("")}
+    ${this.books
+      .map(book => `<li>${book.title} by ${book.author}</li>`)
+      .join("")}
     </ul>
+    </div>
+    ${this.renderBookClubButtons()}
+    </div>
+    `;
+  }
+
+  renderBookClubButtons() {
+    return `<div class="edit">
+    <button class="edit-button" id="${this.id}">Edit</button>
+    </div>
+    <div class="delete">
+    <button class="del-button" id="${this.id}">Delete</button>
     </div>
     `;
   }

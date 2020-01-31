@@ -1,6 +1,8 @@
 body {
-  font-size: large;
+  font-family: sans-serif;
   text-align: justify;
+  background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  opacity: 0.9;
 }
 
 #bookclubs-list {
@@ -11,22 +13,33 @@ body {
 .card {
   text-align: center;
   border: grey solid 1px;
+  background: white;
   padding: 1rem;
   width: 15rem;
   height: 25rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  /* box-shadow: 3px 4px #4b4748; */
+  box-shadow: 3px 4px #4b4748;
+  position: relative;
+}
+
+img {
+  width: 95px;
+  height: 120px;
 }
 
 .bookdetails {
-  padding: 30px 20px 5px 20px;
+  padding: 5px 20px 2px 20px;
+  position: relative;
 }
 
 .bc-button {
   box-shadow: 0px 10px 14px -7px #276873;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
   background-color: #599bb3;
+  position: absolute;
+  bottom: 15px;
+  left: 65px;
   border-radius: 6px;
   display: inline-block;
   cursor: pointer;
@@ -34,8 +47,7 @@ body {
   font-family: Arial;
   font-size: 15px;
   font-weight: bold;
-  padding: 13px 32px;
-  text-decoration: none;
+  padding: 10px 30px;
   text-shadow: 0px 1px 0px #3d768a;
 }
 
@@ -58,4 +70,60 @@ body {
 input {
   width: 80%;
   display: inline-block;
+}
+
+.page_title {
+  padding-top: 5%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.cr_reading {
+  text-align: center;
+  padding-top: 4%;
+}
+
+.bcdeets_container {
+  background: white;
+  height: 100%;
+  position: relative;
+}
+
+.bookshelf {
+  padding: 5% 5% 10%;
+}
+
+.edit-button {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  padding: 10px 30px;
+  text-shadow: 0px 1px 0px #3d768a;
+  display: inline-block;
+  bottom: 15px;
+  left: 30%;
+  width: 110px;
+}
+
+.del-button {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  padding: 10px 30px;
+  text-shadow: 0px 1px 0px #3d768a;
+  display: inline-block;
+  cursor: pointer;
+  bottom: 15px;
+  right: 30%;
+  width: 110px;
 }
