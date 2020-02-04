@@ -110,3 +110,12 @@ input {
   right: 50%;
   width: 110px;
 }
+
+#back_btn {
+  position: absolute;
+  right: 14px;
+  top: 5px;
+  transform: rotate(45deg);
+  font-size: 35px;
+  cursor: pointer;
+}

@@ -13,7 +13,7 @@ class BookClubsAdapter {
       book: bookDetails
     };
 
-    const configObj = {
+    let configObj = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,5 +28,21 @@ class BookClubsAdapter {
 
   getBookClub(id) {
     return fetch(`${this.baseUrl}/${id}`).then(res => res.json());
+  }
+
+  deleteBookClub(id) {
+    let configObj = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify()
+    };
+    return fetch(`${this.baseUrl}/${id}`, configObj)
+      .then(res => res.json())
+      .then(data => {
+        window.location.reload();
+      });
   }
 }

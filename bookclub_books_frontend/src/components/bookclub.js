@@ -3,12 +3,12 @@ class BookClub {
     this.id = bookClubJSON.id;
     this.name = bookClubJSON.name;
     this.books = bookClubJSON.books;
-    this.bceventListeners();
   }
 
-  bceventListeners() {
-    this.delete = document.getElementById(`button-${this.id}`);
-    this.delete.addEventListener("click", console.log("clicked"));
+  bcEventListeners() {
+    // document.getElementById("back_btn").addEventListener("click", function() {
+    //   console.log("clicked");
+    // });
   }
 
   renderBookClubCard() {
@@ -31,11 +31,15 @@ class BookClub {
     </div>
     <h3>${book.title}</h3>
     <h4>by ${book.author}</h4>
-    </div>`;
+    </div>
+    `;
   }
 
   renderBookClubDeets() {
     return `<div class="bcdeets_container">
+    <div id="back_btn">
+    +
+    </div>
     <div class="page_title">
     <h2>${this.name}</h2>
     </div>
@@ -50,16 +54,14 @@ class BookClub {
       .map(book => `<li>${book.title} by ${book.author}</li>`)
       .join("")}
     </ul>
-    </div>
     ${this.renderBookClubButtons()}
-    </div>
     `;
   }
 
   renderBookClubButtons() {
     return `
     <div id="delete">
-    <button class="del-button" id="button-${this.id}">Delete</button>
+    <button class="del-button" id="${this.id}">Delete</button>
     </div>
     `;
   }

@@ -13,6 +13,11 @@ class BookClubs {
         this.fetchBookClub(event.target.id);
       }
     });
+    this.bookClubsList.addEventListener("click", () => {
+      if (event.target.className === "del-button") {
+        this.adapter.deleteBookClub(event.target.id);
+      }
+    });
     this.newBookClubName = document.getElementById("new-bookclub-name");
     this.bookName = document.getElementById("book_currently_reading");
     this.bookAuthor = document.getElementById("cr_author");

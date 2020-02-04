@@ -9,8 +9,6 @@ class BookclubsController < ApplicationController
     @bookclub = Bookclub.create(bookclub_params)
     @bookclub.books << Book.create(title: params[:book][:title], author: params[:book][:author], currently_reading: true)
     
-    # @book = @bookclub.books.build(book_params) doesn't work!
-
     render json: @bookclub, include: [:books]
     
   end 
@@ -21,18 +19,13 @@ class BookclubsController < ApplicationController
     render json: @bookclub, include: [:books] 
   end 
 
-  def update
-    @bookclub = Bookclub.find(params[:id])
-    @bookclub.update(bookclub_params)
-
-    render json: @bookclub, status: 200
-  end 
 
   def destroy 
     @bookclub = Bookclub.find(params[:id])
     @bookclub.delete 
 
-    render json: {bookclubId: @bookclub.id}
+    render json: {"message": "Bookclub deleted"}
+    
   end 
 
 
