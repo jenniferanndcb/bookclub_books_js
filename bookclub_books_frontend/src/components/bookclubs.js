@@ -69,7 +69,12 @@ class BookClubs {
   }
 
   renderBookClubs() {
-    this.bookClubsList.innerHTML = this.bookclubs
+    this.sortedBookclubs = this.bookclubs.sort(function(a, b) {
+      let clubA = a.name;
+      let clubB = b.name;
+      return clubA < clubB ? -1 : clubA > clubB ? 1 : 0;
+    });
+    this.bookClubsList.innerHTML = this.sortedBookclubs
       .map(bookclub => bookclub.renderBookClubCard())
       .join("");
   }
